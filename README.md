@@ -84,10 +84,8 @@ pid 为 0 时，该命令作用于当前进程
 #include<sys/types.h>
 #include<sys/socket.h>
 int socket(int family, int type, int protocol);
-```
-返回一个文件描述符，指通信信道的末端。调用失败返回-1  
+//返回一个文件描述符，指通信信道的末端。调用失败返回-1  
 
-``` C
 // TCP 套接字
 int fd0 = socket(AF_INET, SOCK_STREAM, 0);
 
