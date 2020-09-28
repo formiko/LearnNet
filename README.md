@@ -13,7 +13,13 @@ argv: D:\工作\test.exe
 
 ## 环境表
 ``` C
-int main(int arc, char *argv[], char *envp[]){
-	
+#include<stdio.h>
+int main(int argc, char *argv[]){
+        int n;
+        extern char ** environ;
+        for(n = 0; environ[n] != (char *)0; ++n){
+                printf("%s\n", environ[n]);
+        }
+        return 0;
 }
 ```
