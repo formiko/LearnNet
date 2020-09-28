@@ -95,3 +95,21 @@ int fd1 = socket(AF_INET, SOCK_DGRAM, 0);
 // 直接访问 IP 的套接字
 int fd2 = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
 ```
+
+## socketpair()
+``` C
+#include<sys/types.h>
+#include<sys/socket.h>
+int socketpair(int family, int type, int protocol, int fd_array[2]);
+```
+返回两个套接字描述符。调用成功返回2，否则返回-1
+
+``` C
+int rc, fd_array[2];
+
+// socketpair() 用 SVR4 面向连接的传输提供者之一产生一个通信信道
+rc = socketpair(AF_UNIX, SOCK_STREAM, 0, fd_array);
+
+// socketpair() 用无连接的传输提供者产生一个通信信道
+rc = socketpair(AF_UNIX, SOCK_DGRAM, 0, fd_array);
+```
