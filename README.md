@@ -54,3 +54,19 @@ int main(){
 输出：  
 SHELL = /bin/bash.
 
+## 标识符
+``` C
+int main(){
+        printf("进程标识 = %d\n", getpid());
+        printf("父进程标识 = %d\n", getppid());
+        printf("用户标识符 = %d\n", getuid());
+        printf("有效用户标识符 = %d\n", geteuid());
+        printf("用户组号 = %d\n", getgid());
+        printf("有效用户组号 = %d\n", getegid());
+        printf("进程组号 = %d\n", getpgrp());
+        return 0;
+}
+```
+## 设置进程组号
+`int setpgrp(int pid, int pgrp)` 
+pid 为 0 时，该命令作用于当前进程
